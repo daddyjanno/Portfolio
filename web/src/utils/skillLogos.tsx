@@ -13,6 +13,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="HTML5"
+        loading="lazy"
       />
     </a>
   ),
@@ -23,6 +24,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="CSS3"
+        loading="lazy"
       />
     </a>
   ),
@@ -37,6 +39,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="JavaScript"
+        loading="lazy"
       />
     </a>
   ),
@@ -47,6 +50,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Typescript"
+        loading="lazy"
       />
     </a>
   ),
@@ -57,6 +61,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="React"
+        loading="lazy"
       />
     </a>
   ),
@@ -67,6 +72,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Redux"
+        loading="lazy"
       />
     </a>
   ),
@@ -77,6 +83,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Sass"
+        loading="lazy"
       />
     </a>
   ),
@@ -87,6 +94,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Styled-components"
+        loading="lazy"
       />
     </a>
   ),
@@ -97,6 +105,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Tailwind CSS"
+        loading="lazy"
       />
     </a>
   ),
@@ -107,6 +116,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Bootstrap"
+        loading="lazy"
       />
     </a>
   ),
@@ -117,6 +127,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="NextJS"
+        loading="lazy"
       />
     </a>
   ),
@@ -127,6 +138,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="PixiJS"
+        loading="lazy"
       />
     </a>
   ),
@@ -137,6 +149,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="AnimeJS"
+        loading="lazy"
       />
     </a>
   ),
@@ -149,6 +162,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="NodeJS"
+        loading="lazy"
       />
     </a>
   ),
@@ -159,6 +173,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Ruby"
+        loading="lazy"
       />
     </a>
   ),
@@ -169,6 +184,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Rails"
+        loading="lazy"
       />
     </a>
   ),
@@ -179,6 +195,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="MongoDB"
+        loading="lazy"
       />
     </a>
   ),
@@ -189,6 +206,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="MySQL"
+        loading="lazy"
       />
     </a>
   ),
@@ -199,6 +217,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="PostgreSQL"
+        loading="lazy"
       />
     </a>
   ),
@@ -211,6 +230,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Heroku"
+        loading="lazy"
       />
     </a>
   ),
@@ -221,6 +241,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Figma"
+        loading="lazy"
       />
     </a>
   ),
@@ -231,6 +252,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="MacOS"
+        loading="lazy"
       />
     </a>
   ),
@@ -243,6 +265,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Photoshop"
+        loading="lazy"
       />
     </a>
   ),
@@ -253,6 +276,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="After Effects"
+        loading="lazy"
       />
     </a>
   ),
@@ -263,6 +287,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Premiere Pro"
+        loading="lazy"
       />
     </a>
   ),
@@ -273,6 +298,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Final Cut Pro"
+        loading="lazy"
       />
     </a>
   ),
@@ -283,6 +309,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Avid"
+        loading="lazy"
       />
     </a>
   ),
@@ -295,6 +322,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="GitHub"
+        loading="lazy"
       />
     </a>
   ),
@@ -305,6 +333,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="LinkedIn"
+        loading="lazy"
       />
     </a>
   ),
@@ -315,6 +344,7 @@ export const SkillLogos = {
         width="36"
         height="36"
         alt="Email"
+        loading="lazy"
       />
     </a>
   ),
