@@ -293,13 +293,16 @@ export const SkillLogos = {
   ),
   finalcut: (
     <a href="https://www.apple.com/final-cut-pro/" target="_blank" rel="noreferrer">
-      <img
-        src="/finalcut.png"
-        width="36"
-        height="36"
-        alt="Final Cut Pro"
-        loading="lazy"
-      />
+      <picture>
+        <source srcSet="/finalcut.webp" type="image/webp" />
+        <img
+          src="/finalcut.png"
+          width="36"
+          height="36"
+          alt="Final Cut Pro"
+          loading="lazy"
+        />
+      </picture>
     </a>
   ),
   avid: (
