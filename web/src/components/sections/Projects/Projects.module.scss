@@ -1,0 +1,107 @@
+.projects {
+  padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+  background-color: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+  color: var(--color-text);
+}
+
+/* Filter */
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 2px solid var(--color-border);
+  background-color: transparent;
+  color: var(--color-text);
+  border-radius: 999px;
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+
+  &:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  &.active {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.gridItem {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-lg);
+  color: var(--color-text-light);
+
+  p {
+    margin: 0;
+    font-size: var(--font-size-p);
+  }
+}
+
+/* Dark mode handled via CSS variables */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects {
+    padding: var(--spacing-2xl) var(--section-padding-horizontal);
+  }
+
+  .title {
+    font-size: var(--font-size-h3);
+  }
+
+  .filterContainer {
+    gap: var(--spacing-sm);
+  }
+
+  .filterBtn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-small);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
