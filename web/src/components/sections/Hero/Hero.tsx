@@ -13,11 +13,14 @@ export const Hero = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.avatar}>
-            <img
-              src="/jnd-avatar.png"
-              alt="Jean-Noël Drugmand"
-              className={styles.avatarImage}
-            />
+            <picture>
+              <source srcSet="/jnd-avatar.webp" type="image/webp" />
+              <img
+                src="/jnd-avatar.png"
+                alt="Jean-Noël Drugmand"
+                className={styles.avatarImage}
+              />
+            </picture>
           </div>
           <h1 className={styles.title}>Jean-Noël Drugmand</h1>
           <p className={styles.subtitle}>Creative Developer | Fullstack JavaScript</p>
