@@ -1,0 +1,122 @@
+.about {
+  padding: var(--section-padding-vertical) var(--section-padding-horizontal);
+  background-color: var(--color-bg);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.content {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--spacing-2xl);
+  color: var(--color-text);
+}
+
+.text {
+  margin-bottom: var(--spacing-3xl);
+
+  p {
+    font-size: 1.0625rem;
+    line-height: var(--line-height-relaxed);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  padding: var(--spacing-2xl);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+  min-width: 150px;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  p {
+    font-size: var(--font-size-small);
+    color: var(--color-text-light);
+    margin: 0;
+  }
+}
+
+.marker {
+  font-size: 2rem;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin: 0 var(--spacing-sm);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+/* Dark mode handled via CSS variables */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: var(--spacing-2xl) var(--section-padding-horizontal);
+  }
+
+  .title {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .text {
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .timeline {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+
+  .item {
+    width: 100%;
+    flex: unset;
+  }
+}
