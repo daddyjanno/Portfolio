@@ -262,27 +262,3 @@ textarea:focus:not(:focus-visible) {
   outline: none;
 }
 
-/* Utility classes */
-.text-primary {
-  color: var(--color-primary);
-}
-
-.text-secondary {
-  color: var(--color-secondary);
-}
-
-.text-light {
-  color: var(--color-text-light);
-}
-
-.text-accent {
-  color: var(--color-accent);
-}
-
-.bg-primary {
-  background-color: var(--color-primary);
-}
-
-.bg-light {
-  background-color: var(--color-bg-secondary);
-}
