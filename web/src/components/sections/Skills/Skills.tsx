@@ -27,9 +27,6 @@ export const Skills = () => {
                       {skill.icon && <span className={styles.skillIcon}>{skill.icon}</span>}
                       <span className={styles.name}>{skill.name}</span>
                     </div>
-                    <span className={`${styles.level} ${styles[skill.level.toLowerCase()]}`}>
-                      {skill.level}
-                    </span>
                   </li>
                 ))}
               </ul>
