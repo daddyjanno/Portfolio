@@ -26,13 +26,16 @@ export const useIntersectionObserver = ({
       },
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    // Store current ref value to avoid stale closure in cleanup
+    const currentElement = ref.current;
+
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [threshold, rootMargin]);

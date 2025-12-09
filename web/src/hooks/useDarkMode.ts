@@ -1,27 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+// Initialize theme on first load without triggering multiple renders
+const initializeTheme = () => {
+  if (typeof window === 'undefined') return { isDark: false, theme: 'light' };
+
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    return { isDark: saved === 'dark', theme: saved };
+  }
+
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = prefersDark ? 'dark' : 'light';
+  localStorage.setItem('theme', theme);
+  return { isDark: prefersDark, theme };
+};
 
 export const useDarkMode = () => {
-  const [isDark, setIsDark] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isDark, setIsDark] = useState(() => initializeTheme().isDark);
+  const isInitialized = useRef(false);
 
   useEffect(() => {
-    // Check localStorage first
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      setIsDark(saved === 'dark');
-      document.documentElement.setAttribute('data-theme', saved);
-      setIsLoading(false);
-      return;
-    }
-
-    // Check system preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDark(prefersDark);
-    const theme = prefersDark ? 'dark' : 'light';
+    // Apply theme to DOM
+    const theme = isDark ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    setIsLoading(false);
-  }, []);
+    isInitialized.current = true;
+  }, [isDark]);
 
   const toggleDarkMode = () => {
     const newDark = !isDark;
@@ -31,5 +34,5 @@ export const useDarkMode = () => {
     localStorage.setItem('theme', theme);
   };
 
-  return { isDark, toggleDarkMode, isLoading };
+  return { isDark, toggleDarkMode };
 };
