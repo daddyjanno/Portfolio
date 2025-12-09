@@ -15,17 +15,14 @@ export const Hero = () => {
           <div className={styles.avatar}>
             <picture>
               <source srcSet="/jnd-avatar.webp" type="image/webp" />
-              <img
-                src="/jnd-avatar.png"
-                alt="Jean-Noël Drugmand"
-                className={styles.avatarImage}
-              />
+              <img src="/jnd-avatar.webp" alt="Jean-Noël Drugmand" className={styles.avatarImage} />
             </picture>
           </div>
           <h1 className={styles.title}>Jean-Noël Drugmand</h1>
           <p className={styles.subtitle}>Creative Developer | Fullstack JavaScript</p>
           <p className={styles.description}>
-            Développeur fullstack passionné par la création d'expériences web performantes et engageantes
+            Développeur fullstack passionné par la création d'expériences web performantes et
+            engageantes
           </p>
 
           <div className={styles.ctas}>
