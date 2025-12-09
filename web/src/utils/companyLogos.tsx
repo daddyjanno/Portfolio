@@ -30,12 +30,18 @@ export const CompanyLogos = {
   ),
   gretadeshautsdeseine: (
     <a href="https://www.greta-cfa92.ac-versailles.fr/" target="_blank" rel="noreferrer">
-      <img src="/greta.webp" width="24" height="24" alt="GRETA" loading="lazy" />
+      <picture>
+        <source srcSet="/greta.webp" type="image/webp" />
+        <img src="/greta.png" width="24" height="24" alt="GRETA" loading="lazy" />
+      </picture>
     </a>
   ),
   eurosport: (
     <a href="https://www.eurosport.com/" target="_blank" rel="noreferrer">
-      <img src="/eurosport.webp" width="24" height="24" alt="Eurosport" loading="lazy" />
+      <picture>
+        <source srcSet="/eurosport.webp" type="image/webp" />
+        <img src="/eurosport.png" width="24" height="24" alt="Eurosport" loading="lazy" />
+      </picture>
     </a>
   ),
   freelance: (
