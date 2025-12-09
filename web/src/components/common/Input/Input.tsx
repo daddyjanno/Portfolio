@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import styles from './Input.module.scss';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -9,7 +9,9 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, label, error, helperText, id, ...props }, ref) => {
-    const inputId = id || `input-${Math.random()}`;
+    // Generate stable unique ID for form accessibility
+    const generatedId = useId();
+    const inputId = id || generatedId;
 
     return (
       <div className={styles.inputWrapper}>
