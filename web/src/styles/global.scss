@@ -1,5 +1,6 @@
-@import './variables.scss';
-@import './reset.scss';
+// Use @use instead of deprecated @import
+@use './variables.scss' as *;
+@use './reset.scss' as *;
 
 /* Global Styles */
 html {
