@@ -166,6 +166,18 @@ export const SkillLogos = {
       />
     </a>
   ),
+  express: (
+    <a href="https://expressjs.com/" target="_blank" rel="noreferrer">
+      <img
+        src="/expressjs-icon.svg"
+        width="36"
+        height="36"
+        alt="Express"
+        style={{ filter: 'var(--windsurf-filter)' }}
+        loading="lazy"
+      />
+    </a>
+  ),
   ruby: (
     <a href="https://ruby-lang.org/" target="_blank" rel="noreferrer">
       <img
@@ -236,13 +248,7 @@ export const SkillLogos = {
   ),
   figma: (
     <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
-      <img
-        src="/figma-icon.svg"
-        width="36"
-        height="36"
-        alt="Figma"
-        loading="lazy"
-      />
+      <img src="/figma-icon.svg" width="36" height="36" alt="Figma" loading="lazy" />
     </a>
   ),
   macos: (
@@ -260,13 +266,7 @@ export const SkillLogos = {
   // Creative
   photoshop: (
     <a href="https://www.adobe.com/uk/products/photoshop.html" target="_blank" rel="noreferrer">
-      <img
-        src="/adobe-photoshop-icon.svg"
-        width="36"
-        height="36"
-        alt="Photoshop"
-        loading="lazy"
-      />
+      <img src="/adobe-photoshop-icon.svg" width="36" height="36" alt="Photoshop" loading="lazy" />
     </a>
   ),
   aftereffects: (
@@ -295,13 +295,7 @@ export const SkillLogos = {
     <a href="https://www.apple.com/final-cut-pro/" target="_blank" rel="noreferrer">
       <picture>
         <source srcSet="/finalcut.webp" type="image/webp" />
-        <img
-          src="/finalcut.png"
-          width="36"
-          height="36"
-          alt="Final Cut Pro"
-          loading="lazy"
-        />
+        <img src="/finalcut.webp" width="36" height="36" alt="Final Cut Pro" loading="lazy" />
       </picture>
     </a>
   ),
