@@ -7,7 +7,6 @@ export const SKILLS: Skill[] = [
     skills: [
       {
         name: 'HTML5 / CSS3',
-        level: 'Expert',
         icon: (
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             {SkillLogos.html5}
@@ -15,28 +14,25 @@ export const SKILLS: Skill[] = [
           </div>
         ),
       },
-      { name: 'JavaScript (ES6+)', level: 'Expert', icon: SkillLogos.javascript },
-      { name: 'TypeScript', level: 'Advanced', icon: SkillLogos.typescript },
-      { name: 'React', level: 'Expert', icon: SkillLogos.react },
-      { name: 'Redux / Redux Toolkit', level: 'Advanced', icon: SkillLogos.redux },
-      { name: 'SASS', level: 'Advanced', icon: SkillLogos.sass },
-      { name: 'Styled-Components', level: 'Advanced', icon: SkillLogos.styledComponents },
-      { name: 'Tailwind CSS', level: 'Intermediate', icon: SkillLogos.tailwindcss },
+      { name: 'JavaScript (ES6+)', icon: SkillLogos.javascript },
+      { name: 'TypeScript', icon: SkillLogos.typescript },
+      { name: 'React', icon: SkillLogos.react },
+      { name: 'Redux / Redux Toolkit', icon: SkillLogos.redux },
+      { name: 'SASS', icon: SkillLogos.sass },
+      { name: 'Styled-Components', icon: SkillLogos.styledComponents },
+      { name: 'Tailwind CSS', icon: SkillLogos.tailwindcss },
     ],
   },
   {
     category: 'Backend',
     skills: [
-      { name: 'Node.js / Express', level: 'Intermediate', icon: SkillLogos.nodejs },
-      { name: 'Ruby on Rails', level: 'Intermediate', icon: (
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
-          {SkillLogos.ruby}
-          {SkillLogos.rails}
-        </div>
-      ) },
-      { name: 'SQL / PostgreSQL', level: 'Intermediate', icon: SkillLogos.postgresql },
-      { name: 'MongoDB', level: 'Intermediate', icon: SkillLogos.mongodb },
-      { name: 'MySQL', level: 'Intermediate', icon: SkillLogos.mysql },
+      { name: 'Node.js', icon: SkillLogos.nodejs },
+      { name: 'Express', icon: SkillLogos.express },
+      { name: 'Ruby', icon: SkillLogos.ruby },
+      { name: 'Ruby on Rails', icon: SkillLogos.rails },
+      { name: 'SQL / PostgreSQL', icon: SkillLogos.postgresql },
+      { name: 'MongoDB', icon: SkillLogos.mongodb },
+      { name: 'MySQL', icon: SkillLogos.mysql },
     ],
   },
   {
@@ -44,7 +40,6 @@ export const SKILLS: Skill[] = [
     skills: [
       {
         name: 'Git / GitHub',
-        level: 'Advanced',
         icon: (
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             {/* Git icon */}
@@ -64,7 +59,6 @@ export const SKILLS: Skill[] = [
       },
       {
         name: 'Jest / TDD',
-        level: 'Advanced',
         icon: (
           <a href="https://jestjs.io/" target="_blank" rel="noreferrer">
             <img src="/jest-svgrepo-com.svg" alt="Jest" style={{ width: '24px', height: '24px' }} />
@@ -73,23 +67,29 @@ export const SKILLS: Skill[] = [
       },
       {
         name: 'ESLint / Prettier',
-        level: 'Advanced',
         icon: (
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             {/* ESLint icon */}
             <a href="https://eslint.org/" target="_blank" rel="noreferrer">
-              <img src="/eslint-svgrepo-com.svg" alt="ESLint" style={{ width: '24px', height: '24px' }} />
+              <img
+                src="/eslint-svgrepo-com.svg"
+                alt="ESLint"
+                style={{ width: '24px', height: '24px' }}
+              />
             </a>
             {/* Prettier icon */}
             <a href="https://prettier.io/" target="_blank" rel="noreferrer">
-              <img src="/prettier-svgrepo-com.svg" alt="Prettier" style={{ width: '24px', height: '24px' }} />
+              <img
+                src="/prettier-svgrepo-com.svg"
+                alt="Prettier"
+                style={{ width: '24px', height: '24px' }}
+              />
             </a>
           </div>
         ),
       },
       {
         name: 'Vite / Webpack',
-        level: 'Intermediate',
         icon: (
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             {/* Vite icon */}
@@ -107,16 +107,23 @@ export const SKILLS: Skill[] = [
       },
       {
         name: 'Claude Code / Windsurf',
-        level: 'Advanced',
         icon: (
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             {/* Claude Code icon */}
             <a href="https://claude.ai/code" target="_blank" rel="noreferrer">
-              <img src="/claude-ai-icon.svg" alt="Claude Code" style={{ width: '24px', height: '24px' }} />
+              <img
+                src="/claude-ai-icon.svg"
+                alt="Claude Code"
+                style={{ width: '24px', height: '24px' }}
+              />
             </a>
             {/* Windsurf icon */}
             <a href="https://codeium.com/windsurf" target="_blank" rel="noreferrer">
-              <img src="/windsurf-icon.svg" alt="Windsurf" style={{ width: '24px', height: '24px', filter: 'var(--windsurf-filter)' }} />
+              <img
+                src="/windsurf-icon.svg"
+                alt="Windsurf"
+                style={{ width: '24px', height: '24px', filter: 'var(--windsurf-filter)' }}
+              />
             </a>
           </div>
         ),
@@ -126,12 +133,11 @@ export const SKILLS: Skill[] = [
   {
     category: 'Creative',
     skills: [
-      { name: 'After Effects', level: 'Expert', icon: SkillLogos.aftereffects },
-      { name: 'Photoshop', level: 'Advanced', icon: SkillLogos.photoshop },
-      { name: 'Figma', level: 'Advanced', icon: SkillLogos.figma },
+      { name: 'After Effects', icon: SkillLogos.aftereffects },
+      { name: 'Photoshop', icon: SkillLogos.photoshop },
+      { name: 'Figma', icon: SkillLogos.figma },
       {
         name: 'Premiere Pro / Final Cut',
-        level: 'Expert',
         icon: (
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             {SkillLogos.premierepro}
@@ -139,7 +145,7 @@ export const SKILLS: Skill[] = [
           </div>
         ),
       },
-      { name: 'Avid', level: 'Expert', icon: SkillLogos.avid },
+      { name: 'Avid', icon: SkillLogos.avid },
     ],
   },
 ];
@@ -154,7 +160,7 @@ export const SOFT_SKILLS: SoftSkill[] = [
     description: '9 ans en freelance, gestion de projets',
   },
   {
-    name: 'Esprit d\'équipe',
+    name: "Esprit d'équipe",
     description: 'Management de 17 collaborateurs chez Eurosport',
   },
   {
