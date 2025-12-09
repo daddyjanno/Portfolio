@@ -15,7 +15,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpen }) => 
       }
     }}>
       <div className={styles.image}>
-        <div className={styles.placeholder}>📸</div>
+        {project.images && project.images.length > 0 ? (
+          <img
+            src={project.images[0]}
+            alt={project.title}
+            className={styles.projectImage}
+          />
+        ) : (
+          <div className={styles.placeholder}>📸</div>
+        )}
       </div>
 
       <div className={styles.content}>
