@@ -21,7 +21,6 @@ export interface Skill {
 
 export interface SkillItem {
   name: string;
-  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
   icon?: string | React.ReactNode;
 }
 
@@ -30,9 +29,9 @@ export interface TimelineItem {
   title: string;
   company?: string;
   type: 'Experience' | 'Education';
-  startDate: string;
+  startDate?: string;
   endDate?: string;
-  description: string;
+  description: string[];
   stack?: string[];
 }
 
