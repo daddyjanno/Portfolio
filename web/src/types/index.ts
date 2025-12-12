@@ -6,7 +6,7 @@ export interface Project {
   description: string;
   shortDescription: string;
   technologies: string[];
-  category: 'React' | 'TypeScript' | 'Fullstack' | 'Optimisation' | 'Other';
+  category: 'Frontend' | 'Backend' | 'Fullstack';
   images: string[];
   details: string[];
   demoUrl?: string;

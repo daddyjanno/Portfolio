@@ -48,6 +48,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </Modal>
         )}
 
+        {/* Project Description */}
+        {project.description && (
+          <div className={styles.description}>
+            <p>{project.description}</p>
+          </div>
+        )}
+
         <div className={styles.technologies}>
           {project.technologies.map((tech) => (
             <span key={tech} className={styles.tag}>
@@ -59,9 +66,28 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className={styles.details}>
           <h3>Détails du projet</h3>
           <ul>
-            {project.details.map((detail, idx) => (
-              <li key={idx}>{detail}</li>
-            ))}
+            {project.details.map((detail, idx) => {
+              // Extract URL from markdown link format [text](url)
+              const linkMatch = detail.match(/\[(.*?)\]\((.*?)\)/);
+
+              if (linkMatch) {
+                return (
+                  <a
+                    key={idx}
+                    href={linkMatch[2]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <li style={{ color: 'var(--color-primary)', cursor: 'pointer' }}>
+                      {linkMatch[1]}
+                    </li>
+                  </a>
+                );
+              }
+
+              return <li key={idx}>{detail}</li>;
+            })}
           </ul>
         </div>
 

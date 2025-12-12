@@ -32,10 +32,10 @@ export const Contact = () => {
     setError(null);
 
     try {
-      // Get reCAPTCHA v3 token
-      const recaptchaToken = await recaptchaRef.current?.executeAsync();
+      // Get reCAPTCHA v2 token
+      const recaptchaToken = recaptchaRef.current?.getValue();
       if (!recaptchaToken) {
-        setError('Erreur de validation reCAPTCHA. Veuillez réessayer.');
+        setError('Veuillez cocher le reCAPTCHA.');
         setIsLoading(false);
         return;
       }
@@ -47,6 +47,8 @@ export const Contact = () => {
       if (success) {
         setSubmitted(true);
         setFormData({ name: '', email: '', subject: 'Opportunité professionnelle', message: '' });
+        // Reset reCAPTCHA
+        recaptchaRef.current?.reset();
 
         // Auto-reset after 4 seconds
         setTimeout(() => {
@@ -54,10 +56,14 @@ export const Contact = () => {
         }, 4000);
       } else {
         setError("Erreur lors de l'envoi du message. Veuillez réessayer.");
+        // Reset reCAPTCHA on error
+        recaptchaRef.current?.reset();
       }
     } catch (err) {
       console.error('Error submitting form:', err);
       setError("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      // Reset reCAPTCHA on error
+      recaptchaRef.current?.reset();
     } finally {
       setIsLoading(false);
     }
@@ -137,12 +143,13 @@ export const Contact = () => {
               />
             </div>
 
-            {/* reCAPTCHA v3 - Invisible */}
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-              size="invisible"
-            />
+            {/* reCAPTCHA v2 - Checkbox */}
+            <div style={{ marginBottom: 'var(--spacing-md)' }}>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+              />
+            </div>
 
             <Button type="submit" variant="primary" size="large" disabled={submitted || isLoading}>
               {submitted
