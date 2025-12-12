@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Modal } from '../../common/Modal/Modal';
 import { Button } from '../../common/Button/Button';
+import { Slideshow } from './Slideshow';
 import type { Project } from '../../../types';
 import styles from './ProjectModal.module.scss';
 
@@ -10,51 +11,41 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
   return (
     <Modal isOpen={true} onClose={onClose} title={project.title} size="large">
       <div className={styles.modal}>
-        <div className={styles.images}>
-          {project.images && project.images.length > 0 ? (
-            project.images.map((image, idx) => (
-              <div
-                key={idx}
-                className={styles.image}
-                onClick={() => setSelectedImageIndex(idx)}
-              >
-                <img
-                  src={image}
-                  alt={`${project.title} - Image ${idx + 1}`}
-                  className={styles.projectImage}
-                />
-              </div>
-            ))
-          ) : (
-            <div className={styles.image}>📸 Pas d'image disponible</div>
-          )}
-        </div>
+        {/* Slideshow */}
+        {project.images && project.images.length > 0 ? (
+          <Slideshow
+            images={project.images}
+            title={project.title}
+            currentIndex={currentImageIndex}
+            onIndexChange={setCurrentImageIndex}
+            onImageClick={() => setIsLightboxOpen(true)}
+          />
+        ) : (
+          <div className={styles.noImage}>📸 Pas d'image disponible</div>
+        )}
 
-        {/* Lightbox for enlarged image */}
-        {selectedImageIndex !== null && project.images && (
-          <div
-            className={styles.lightbox}
-            onClick={() => setSelectedImageIndex(null)}
+        {/* Lightbox Modal */}
+        {isLightboxOpen && project.images && (
+          <Modal
+            isOpen={isLightboxOpen}
+            onClose={() => setIsLightboxOpen(false)}
+            // title={`Image ${currentImageIndex + 1}/${project.images.length}`}
+            size="large"
           >
-            <div className={styles.lightboxContent}>
+            <div className={styles.lightboxContainer}>
               <img
-                src={project.images[selectedImageIndex]}
-                alt={`${project.title} - Image ${selectedImageIndex + 1}`}
+                src={project.images[currentImageIndex]}
+                alt={`${project.title} - Image ${currentImageIndex + 1}`}
                 className={styles.lightboxImage}
               />
-              <button
-                className={styles.lightboxClose}
-                onClick={() => setSelectedImageIndex(null)}
-                aria-label="Fermer"
-              >
-                ✕
-              </button>
             </div>
-          </div>
+          </Modal>
         )}
 
         <div className={styles.technologies}>
