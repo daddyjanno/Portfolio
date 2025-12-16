@@ -6,6 +6,8 @@
 html {
   scroll-behavior: smooth;
   color-scheme: light dark;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -22,6 +24,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Typography */
@@ -137,6 +141,8 @@ img {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* Main content */
@@ -153,10 +159,11 @@ main {
 
 /* Sections */
 section {
-  width: 100vw;
+  width: 100%;
   padding: var(--section-padding-vertical) var(--section-padding-horizontal);
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 /* Smooth transitions for theme changes */
