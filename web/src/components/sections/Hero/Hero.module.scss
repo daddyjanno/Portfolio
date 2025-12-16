@@ -1,12 +1,45 @@
+// Hero background image layer
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: blur(5px);
+  }
+}
+
+// Gradient overlay on top of background
+.heroBackground::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8) 0%, rgba(139, 92, 246, 0.8) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   color: white;
   position: relative;
   padding: var(--spacing-3xl) var(--section-padding-horizontal);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .container {
@@ -14,6 +47,8 @@
   width: 100%;
   text-align: center;
   animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  z-index: 2;
 }
 
 .content {
@@ -58,12 +93,24 @@
   animation: slideInDown 0.6s ease-out;
 }
 
+// Improved stagger animation
+@keyframes staggerSlideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .subtitle {
   font-size: clamp(1.25rem, 4vw, 1.75rem);
   font-weight: var(--font-weight-semibold);
   margin: 0;
   opacity: 0.95;
-  animation: slideInUp 0.6s ease-out 0.2s both;
+  animation: staggerSlideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
 }
 
 .description {
@@ -72,7 +119,7 @@
   margin: 0;
   opacity: 0.9;
   line-height: var(--line-height-relaxed);
-  animation: slideInUp 0.6s ease-out 0.4s both;
+  animation: staggerSlideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
 }
 
 .ctas {
@@ -81,10 +128,21 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-top: var(--spacing-lg);
-  animation: slideInUp 0.6s ease-out 0.6s both;
+  animation: staggerSlideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s both;
 
   button {
     min-width: 200px;
+    transition: all var(--transition-normal);
+
+    // Enhanced hover effect
+    &:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(0.98);
+    }
   }
 }
 
@@ -94,21 +152,40 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-top: var(--spacing-xl);
-  animation: slideInUp 0.6s ease-out 0.8s both;
+  animation: staggerSlideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
 
   a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
     color: white;
-    font-weight: var(--font-weight-semibold);
-    padding: var(--spacing-sm) var(--spacing-md);
     border: 2px solid white;
     border-radius: var(--radius-md);
     transition: all var(--transition-normal);
     text-decoration: none;
 
+    svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+      transition: transform var(--transition-normal);
+    }
+
     &:hover {
       background-color: white;
       color: var(--color-primary);
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
+      svg {
+        transform: scale(1.1);
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(1.02);
     }
 
     &:focus-visible {
@@ -118,20 +195,36 @@
   }
 }
 
-.scrollIndicator {
-  position: absolute;
-  bottom: var(--spacing-lg);
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 2s infinite;
+// Enhanced scroll indicator animation
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-8px);
+  }
 }
 
-.dot {
-  width: 12px;
-  height: 12px;
-  background-color: white;
-  border-radius: 50%;
+.scrollIndicator {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  z-index: 10;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scrollIcon {
+  width: 32px;
+  height: 32px;
+  display: block;
   opacity: 0.7;
+  transition: opacity var(--transition-normal);
+  filter: brightness(0) invert(1); // Make SVG white
+
+  .scrollIndicator:hover & {
+    opacity: 1;
+  }
 }
 
 /* Animations */
