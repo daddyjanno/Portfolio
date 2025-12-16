@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NAVIGATION_ITEMS } from '../utils/constants';
+import { NAVIGATION_ITEMS, SCROLL_THRESHOLDS } from '../utils/constants';
 
 export const useNavbarScroll = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,7 +15,7 @@ export const useNavbarScroll = () => {
       // Show navbar when user has scrolled past the hero section
       // Hero is approximately 100vh tall
       const heroHeight = window.innerHeight;
-      if (currentScrollY > heroHeight * 0.2) {
+      if (currentScrollY > heroHeight * SCROLL_THRESHOLDS.navbarShow) {
         // Scrolled past hero - show navbar
         setIsVisible(true);
       } else {

@@ -1,20 +1,16 @@
 import { useEffect, useState } from 'react';
+import { useScrollToElement } from '../../../hooks/useScrollToElement';
+import { SCROLL_THRESHOLDS } from '../../../utils/constants';
+import { ArrowUpIcon } from '../../../utils/icons';
 import styles from './BackToTop.module.scss';
 
 export const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { scrollToTop } = useScrollToElement();
 
   // Show button when page is scrolled down
   const toggleVisibility = () => {
-    setIsVisible(window.scrollY > 300);
-  };
-
-  // Scroll to top smoothly
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    setIsVisible(window.scrollY > SCROLL_THRESHOLDS.backToTop);
   };
 
   useEffect(() => {
@@ -31,10 +27,8 @@ export const BackToTop = () => {
       aria-label="Back to top"
       title="Back to top"
     >
-      {/* Arrow up SVG icon */}
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-        <path d="M7 14l5-5 5 5z" />
-      </svg>
+      {/* Arrow up icon - centralized from utils/icons.tsx */}
+      <ArrowUpIcon width={20} height={20} />
     </button>
   );
 };

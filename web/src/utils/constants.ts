@@ -57,3 +57,19 @@ export const ANIMATION_DURATION = {
   normal: 300,
   slow: 500,
 };
+
+/* Scroll-based thresholds */
+export const SCROLL_THRESHOLDS = {
+  backToTop: 300, // Show back-to-top button after 300px scroll
+  navbarShow: 0.3, // Show navbar after scrolling 30% of viewport height
+};
+
+/* Parallax effects */
+export const PARALLAX_SPEEDS = {
+  heroBackground: 0.3, // Hero background parallax speed (30% of scroll)
+};
+
+/* Form validation patterns */
+export const VALIDATION = {
+  emailRegex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+};

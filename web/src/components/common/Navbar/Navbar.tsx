@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, onToggleDarkMode }) => {
           aria-label="Back to home"
           title="Back to home"
         >
-          Portfolio JND
+          Jean-Noël Drugmand
         </button>
 
         {/* Desktop Navigation */}

@@ -1,0 +1,35 @@
+// Styles for skill icons and layouts
+// Replaces inline styles in skills.tsx data
+
+// Icon group layout - for displaying multiple icons side by side
+.iconGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+// Icon dimensions - standard size for skill icons
+.iconSmall {
+  width: 24px;
+  height: 24px;
+}
+
+// Icon with link styling
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Apply icon dimensions to nested elements
+  img,
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+// Special styling for Windsurf filter (dark mode compatibility)
+.windSurfIcon {
+  img {
+    filter: var(--windsurf-filter);
+  }
+}
