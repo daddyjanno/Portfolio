@@ -17,6 +17,7 @@ export const SUBJECT_OPTIONS = [
 export const NAVIGATION_ITEMS = [
   { label: 'Accueil', href: '#hero' },
   { label: 'À propos', href: '#about' },
+  { label: 'Actualités', href: '#featured' },
   { label: 'Compétences', href: '#skills' },
   { label: 'Projets', href: '#projects' },
   { label: 'Parcours', href: '#timeline' },
