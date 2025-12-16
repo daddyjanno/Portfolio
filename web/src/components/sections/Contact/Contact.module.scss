@@ -68,6 +68,8 @@
   color: var(--color-error);
 }
 
+// Form inputs (text, email, select, textarea)
+.input,
 .select,
 .textarea {
   padding: 0.75rem 1rem;
@@ -88,12 +90,86 @@
   &::placeholder {
     color: var(--color-text-light);
   }
+
+  // Error state styling
+  &.inputError {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+
+    &:focus {
+      border-color: var(--color-error);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    }
+  }
+}
+
+// Error message (inline)
+.errorMessage {
+  font-size: 0.75rem;
+  color: var(--color-error);
+  margin-top: -0.5rem;
+  animation: slideInDown 300ms ease-out;
+}
+
+// Alert containers
+.errorAlert,
+.successAlert {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-small);
+  align-items: flex-start;
+  animation: slideInUp 300ms ease-out;
+
+  span:first-child {
+    flex-shrink: 0;
+    font-weight: bold;
+  }
+}
+
+// Error alert styling
+.errorAlert {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+// Success alert styling
+.successAlert {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+// reCAPTCHA container styling
+.recaptchaContainer {
+  margin-bottom: var(--spacing-md);
+  padding: 0.5rem 0;
+
+  // Ensure reCAPTCHA renders correctly
+  :global(.g-recaptcha) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .textarea {
   resize: vertical;
   min-height: 150px;
   font-family: var(--font-family-body);
+}
+
+// Success button state
+.successButton {
+  background-color: var(--color-success) !important;
+  color: white !important;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-success) !important;
+    opacity: 0.9;
+  }
 }
 
 .info {
