@@ -13,14 +13,14 @@ export const About = () => {
           <div className={styles.text}>
             <p>
               Creative Developer passionné par le développement web moderne, actuellement en
-              alternance chez PlayPlay où je développe des composants React et optimise l'expérience
-              utilisateur.
+              alternance chez PlayPlay où je développe des composants et assets avec TypeScript,
+              PixiJS et AnimeJS, et optimise l'expérience utilisateur.
             </p>
 
             <p>
-              Mon parcours atypique combine 7 ans d'expérience en management chez Eurosport
-              (coordination d'équipes de 17 personnes, gestion de 1000+ diffusions live/mois) et 9
-              ans en création audiovisuelle freelance.
+              Mon parcours atypique combine 3 ans en management chez Eurosport (coordination
+              d'équipes de 17 personnes, gestion de 1000+ diffusions live/mois), 4 ans en direction
+              technique pour les contenus digitaux et 9 ans en création audiovisuelle freelance.
             </p>
 
             <p>
