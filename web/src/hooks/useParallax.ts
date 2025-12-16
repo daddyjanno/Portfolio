@@ -19,8 +19,6 @@ export const useParallax = (speed: number = 0.3) => {
 
       // Only apply parallax when element is visible in viewport
       if (elementTop < windowHeight && elementTop + element.offsetHeight > 0) {
-        // Calculate progress of element through viewport (0 to 1)
-        const progress = (windowHeight - elementTop) / windowHeight;
         // Apply parallax offset that moves slower than scroll
         const offset = scrollY * speed;
         element.style.transform = `translateY(${offset}px)`;

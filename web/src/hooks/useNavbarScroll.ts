@@ -7,7 +7,7 @@ export const useNavbarScroll = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    let scrollTimeout: NodeJS.Timeout;
+    let scrollTimeout: ReturnType<typeof setTimeout>;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -15,7 +15,7 @@ export const useNavbarScroll = () => {
       // Show navbar when user has scrolled past the hero section
       // Hero is approximately 100vh tall
       const heroHeight = window.innerHeight;
-      if (currentScrollY > heroHeight * 0.8) {
+      if (currentScrollY > heroHeight * 0.2) {
         // Scrolled past hero - show navbar
         setIsVisible(true);
       } else {
