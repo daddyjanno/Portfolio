@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NAVIGATION_ITEMS } from '../../../utils/constants';
+import { useNavbarScroll } from '../../../hooks/useNavbarScroll';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -9,9 +10,21 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ isDark, onToggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isVisible, activeSection } = useNavbarScroll();
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
+
+    // If clicking on home/hero, scroll to top
+    if (href === '#hero') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+      return;
+    }
+
+    // For other sections, scroll to element
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -19,9 +32,16 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, onToggleDarkMode }) => {
   };
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${!isVisible ? styles.hidden : styles.visible}`}>
       <div className={styles.container}>
-        <div className={styles.logo}>Portfolio JND</div>
+        <button
+          className={styles.logo}
+          onClick={() => handleNavClick('#hero')}
+          aria-label="Back to home"
+          title="Back to home"
+        >
+          Portfolio JND
+        </button>
 
         {/* Desktop Navigation */}
         <ul className={styles.navList}>
@@ -29,6 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, onToggleDarkMode }) => {
             <li key={item.href}>
               <a
                 href={item.href}
+                className={activeSection === item.href ? styles.active : ''}
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick(item.href);
@@ -71,6 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, onToggleDarkMode }) => {
             <li key={item.href}>
               <a
                 href={item.href}
+                className={activeSection === item.href ? styles.active : ''}
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavClick(item.href);
