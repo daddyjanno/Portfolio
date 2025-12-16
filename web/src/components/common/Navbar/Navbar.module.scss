@@ -189,19 +189,18 @@
     display: block;
     padding: var(--spacing-sm);
     border-radius: var(--radius-md);
+    border-bottom: 2px solid transparent;
     transition: all var(--transition-normal);
 
     &:hover {
       color: var(--color-primary);
-      background-color: var(--color-bg-secondary);
+      border-bottom-color: var(--color-primary);
     }
 
     &.active {
       color: var(--color-primary);
-      background-color: var(--color-bg-secondary);
+      border-bottom-color: var(--color-primary);
       font-weight: var(--font-weight-bold);
-      border-left: 3px solid var(--color-primary);
-      padding-left: calc(var(--spacing-sm) - 3px);
     }
 
     &:focus-visible {

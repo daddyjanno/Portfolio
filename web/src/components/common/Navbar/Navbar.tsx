@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { NAVIGATION_ITEMS } from '../../../utils/constants';
 import { useNavbarScroll } from '../../../hooks/useNavbarScroll';
+import { NavLink } from './NavLink';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -47,16 +48,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, onToggleDarkMode }) => {
         <ul className={styles.navList}>
           {NAVIGATION_ITEMS.map((item) => (
             <li key={item.href}>
-              <a
+              <NavLink
                 href={item.href}
-                className={activeSection === item.href ? styles.active : ''}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-              >
-                {item.label}
-              </a>
+                label={item.label}
+                isActive={activeSection === item.href}
+                onClick={handleNavClick}
+                variant="desktop"
+              />
             </li>
           ))}
         </ul>
@@ -90,16 +88,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, onToggleDarkMode }) => {
         <ul className={styles.mobileNavList}>
           {NAVIGATION_ITEMS.map((item) => (
             <li key={item.href}>
-              <a
+              <NavLink
                 href={item.href}
-                className={activeSection === item.href ? styles.active : ''}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(item.href);
-                }}
-              >
-                {item.label}
-              </a>
+                label={item.label}
+                isActive={activeSection === item.href}
+                onClick={handleNavClick}
+                variant="mobile"
+              />
             </li>
           ))}
         </ul>
