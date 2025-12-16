@@ -9,6 +9,17 @@ export const useNavbarScroll = () => {
   useEffect(() => {
     let scrollTimeout: ReturnType<typeof setTimeout>;
 
+    const getNavbarHeight = (): number => {
+      // Get the navbar element and calculate its height dynamically
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        const height = navbar.getBoundingClientRect().height;
+        return height;
+      }
+      // Fallback if navbar not found
+      return 60;
+    };
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -25,21 +36,35 @@ export const useNavbarScroll = () => {
 
       setLastScrollY(currentScrollY);
 
-      // Detect active section
+      // Detect active section - find which section is closest to viewport top
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
+        const navbarHeight = getNavbarHeight();
+        let closestSection: string | null = null;
+        let closestDistance = Infinity;
+
+        // Find which section is closest to the top of viewport (accounting for navbar)
         for (const item of NAVIGATION_ITEMS) {
           const element = document.querySelector(item.href);
           if (element) {
             const rect = element.getBoundingClientRect();
-            // Section is active if it's in the viewport or above
-            if (rect.top <= 150 && rect.bottom > 0) {
-              setActiveSection(item.href);
-              break;
+            // Section must be at least partially visible (top < window height and bottom > navbar height)
+            if (rect.bottom > navbarHeight) {
+              // Distance from navbar bottom to section start
+              const distance = Math.max(0, rect.top - navbarHeight);
+              // Keep track of section closest to navbar
+              if (distance < closestDistance) {
+                closestDistance = distance;
+                closestSection = item.href;
+              }
             }
           }
         }
-      }, 100);
+
+        if (closestSection) {
+          setActiveSection(closestSection);
+        }
+      }, 10);
     };
 
     window.addEventListener('scroll', handleScroll);
