@@ -1,83 +1,20 @@
-import { useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver';
+import { useContactForm } from '../../../hooks/useContactForm';
 import { Button } from '../../common/Button/Button';
-import { SUBJECT_OPTIONS } from '../../../utils/constants';
+import { SUBJECT_OPTIONS, VALIDATION } from '../../../utils/constants';
 import styles from './Contact.module.scss';
-
-// Form field interfaces
-interface ContactFormInputs {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-// Email contact
-const CONTACT_EMAIL = 'jn.drugmand@gmail.com';
 
 export const Contact = () => {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.3 });
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
-  const [submitted, setSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
+  const { formMethods, recaptchaRef, submitted, submitError, onSubmit } = useContactForm();
 
-  // React Hook Form setup with validation
+  // Extract form methods for cleaner code
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-    reset,
-  } = useForm<ContactFormInputs>({
-    mode: 'onBlur', // Validate on blur for better UX
-    defaultValues: {
-      name: '',
-      email: '',
-      subject: 'Opportunité professionnelle',
-      message: '',
-    },
-  });
-
-  // Email validation regex
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  const onSubmit = async (formData: ContactFormInputs) => {
-    setSubmitError(null);
-
-    // Verify reCAPTCHA
-    const recaptchaToken = recaptchaRef.current?.getValue();
-    if (!recaptchaToken) {
-      setSubmitError('Veuillez vérifier le reCAPTCHA pour continuer.');
-      return;
-    }
-
-    try {
-      // Build mailto link with form data
-      const subject = encodeURIComponent(`Portfolio Contact: ${formData.subject}`);
-      const body = encodeURIComponent(
-        `Nom: ${formData.name}\nEmail: ${formData.email}\nSujet: ${formData.subject}\n\n${formData.message}`
-      );
-      const mailtoLink = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-
-      // Open mailto link
-      window.location.href = mailtoLink;
-
-      // Show success state
-      setSubmitted(true);
-      reset();
-      recaptchaRef.current?.reset();
-
-      // Auto-reset success state after 4 seconds
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 4000);
-    } catch (err) {
-      console.error('Error with mailto link:', err);
-      setSubmitError('Une erreur est survenue. Veuillez réessayer.');
-      recaptchaRef.current?.reset();
-    }
-  };
+  } = formMethods;
 
   return (
     <section id="contact" className={styles.contact} ref={ref}>
@@ -129,7 +66,7 @@ export const Contact = () => {
                 {...register('email', {
                   required: 'L\'email est requis',
                   pattern: {
-                    value: emailRegex,
+                    value: VALIDATION.emailRegex,
                     message: 'Veuillez entrer une adresse email valide',
                   },
                 })}
