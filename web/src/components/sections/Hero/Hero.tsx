@@ -10,7 +10,7 @@ export const Hero = () => {
   const { scrollToSection } = useScrollToElement();
 
   return (
-    <section className={styles.hero}>
+    <section id="hero" className={styles.hero}>
       {/* Background Image Layer with Parallax */}
       <div className={styles.heroBackground} ref={parallaxRef}>
         <img src="/Hero.webp" alt="Hero background" loading="lazy" />
