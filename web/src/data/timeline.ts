@@ -6,7 +6,7 @@ export const TIMELINE: TimelineItem[] = [
     title: 'Creative Developer',
     company: 'PlayPlay',
     type: 'Experience',
-    startDate: '2025-01',
+
     description: [
       "Création de composants et d'assets réutilisables",
       'Développement et intégration de nouvelles fonctionnalités',
