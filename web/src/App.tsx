@@ -1,5 +1,6 @@
 import { useDarkMode } from './hooks/useDarkMode';
 import { Navbar } from './components/common/Navbar/Navbar';
+import { BackToTop } from './components/common/BackToTop/BackToTop';
 import { Hero } from './components/sections/Hero/Hero';
 import { About } from './components/sections/About/About';
 import { Skills } from './components/sections/Skills/Skills';
@@ -26,6 +27,7 @@ function App() {
       </main>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 }
