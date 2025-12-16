@@ -64,6 +64,7 @@ export const Slideshow: React.FC<SlideshowProps> = ({
           src={images[currentIndex]}
           alt={`${title} - Image ${currentIndex + 1}`}
           className={styles.image}
+          data-index={currentIndex}
           onClick={onImageClick}
         />
       </div>
