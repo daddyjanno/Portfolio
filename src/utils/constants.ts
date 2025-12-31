@@ -12,7 +12,7 @@ export const SUBJECT_OPTIONS = [
   'Mission freelance',
   'Collaboration',
   'Autre',
-];
+] as const;
 
 export const NAVIGATION_ITEMS = [
   { label: 'Accueil', href: '#hero' },
