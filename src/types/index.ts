@@ -1,5 +1,7 @@
 /* Common types for the portfolio */
 
+import { SUBJECT_OPTIONS } from '../utils/constants';
+
 export interface Project {
   id: string;
   title: string;
@@ -38,7 +40,7 @@ export interface TimelineItem {
 export interface ContactFormData {
   name: string;
   email: string;
-  subject: 'Opportunité professionnelle' | 'Mission freelance' | 'Collaboration' | 'Autre';
+  subject: typeof SUBJECT_OPTIONS[number];
   message: string;
 }
 
