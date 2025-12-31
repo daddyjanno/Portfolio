@@ -31,7 +31,6 @@
 }
 
 .hero {
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,6 +39,7 @@
   padding: var(--spacing-3xl) var(--section-padding-horizontal);
   overflow: hidden;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .container {
@@ -58,16 +58,17 @@
   align-items: center;
 }
 
+/* Avatar size in em units - scales with container font-size */
 .avatar {
-  width: 225px;
-  height: 225px;
+  width: 14.0625em;
+  height: 14.0625em;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 0.1875em solid white;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: slideInDown 0.6s ease-out;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5em 2em rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
@@ -124,22 +125,23 @@
   animation: staggerSlideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
 }
 
+/* CTA buttons with em-based sizing */
 .ctas {
   display: flex;
-  gap: var(--spacing-md);
+  gap: 1em;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: var(--spacing-lg);
+  margin-top: 1.25em;
   animation: staggerSlideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.45s both;
 
   button {
-    min-width: 200px;
+    min-width: 12.5em;
     transition: all var(--transition-normal);
 
-    // Enhanced hover effect
+    /* Enhanced hover effect */
     &:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.5em 1.25em rgba(0, 0, 0, 0.2);
     }
 
     &:active {
@@ -148,29 +150,30 @@
   }
 }
 
+/* Social links with em-based sizing */
 .socials {
   display: flex;
-  gap: var(--spacing-lg);
+  gap: 1.25em;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: var(--spacing-xl);
+  margin-top: 1.875em;
   animation: staggerSlideInUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
 
   a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 2.75em;
+    height: 2.75em;
     color: white;
-    border: 2px solid white;
+    border: 0.125em solid white;
     border-radius: var(--radius-md);
     transition: all var(--transition-normal);
     text-decoration: none;
 
     svg {
-      width: 24px;
-      height: 24px;
+      width: 1.5em;
+      height: 1.5em;
       display: block;
       transition: transform var(--transition-normal);
     }
@@ -179,7 +182,7 @@
       background-color: white;
       color: var(--color-primary);
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0.375em 1em rgba(0, 0, 0, 0.15);
 
       svg {
         transform: scale(1.1);
@@ -191,8 +194,8 @@
     }
 
     &:focus-visible {
-      outline: 2px solid rgba(255, 255, 255, 0.5);
-      outline-offset: 2px;
+      outline: 0.125em solid rgba(255, 255, 255, 0.5);
+      outline-offset: 0.125em;
     }
   }
 }
@@ -210,19 +213,20 @@
 
 .scrollIndicator {
   position: absolute;
-  bottom: 10vh;
+  bottom: 2vh;
   left: 50%;
   z-index: 10;
   animation: scrollBounce 2s ease-in-out infinite;
 }
 
+/* Scroll indicator icon with em-based sizing */
 .scrollIcon {
-  width: 32px;
-  height: 32px;
+  width: 2em;
+  height: 2em;
   display: block;
   opacity: 0.7;
   transition: opacity var(--transition-normal);
-  filter: brightness(0) invert(1); // Make SVG white
+  filter: brightness(0) invert(1); /* Make SVG white */
 
   .scrollIndicator:hover & {
     opacity: 1;
