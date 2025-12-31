@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import type { Options as TerserOptions } from 'terser'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -20,7 +21,7 @@ export default defineConfig({
       format: {
         comments: false,
       },
-    } as any,
+    } as TerserOptions,
     // Chunk splitting strategy for better caching
     rollupOptions: {
       output: {
