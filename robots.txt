@@ -1,0 +1,10 @@
+# Robots.txt for Jean-Noël Drugmand Portfolio
+User-agent: *
+Allow: /
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://jeannoeldrug.fr/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
