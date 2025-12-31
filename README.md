@@ -1,73 +1,150 @@
-# React + TypeScript + Vite
+# Portfolio - Jean-Noël Drugmand
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio professionnel moderne mettant en avant les projets web développés, compétences techniques et expérience professionnelle.
 
-Currently, two official plugins are available:
+## 🚀 Démarrage rapide
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Installation
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Développement
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Lance le serveur Vite à `http://localhost:5173`
+
+### Build production
+
+```bash
+npm run build
+```
+
+Construit un bundle optimisé avec compilation TypeScript.
+
+### Aperçu du build
+
+```bash
+npm run preview
+```
+
+Affiche un aperçu du build production localement.
+
+### Vérification du code
+
+```bash
+npm run lint
+```
+
+Lance ESLint pour vérifier la qualité du code.
+
+## 🛠 Stack technologique
+
+- **React 19** avec TypeScript
+- **Vite** - Outil de build haute performance
+- **SCSS** - Styles modulaires avec CSS modules
+- **react-hook-form** - Gestion des formulaires et validation
+- **Google reCAPTCHA v3** - Sécurité des formulaires
+- **Hooks React personnalisés** - Parallax, dark mode, animations au scroll
+
+## 📁 Structure du projet
+
+```
+src/
+├── components/        # Composants réutilisables et sections
+│   ├── common/       # Button, Card, Modal, Navbar, Footer, BackToTop
+│   └── sections/     # Hero, About, Featured, Skills, Projects, Timeline, Contact
+├── data/             # Données des projets, timeline, compétences
+├── hooks/            # Hooks React personnalisés (useDarkMode, useParallax, etc.)
+├── utils/            # Utilitaires, icônes, logos, constantes
+└── styles/           # Styles globaux et variables CSS
+```
+
+## ✨ Fonctionnalités principales
+
+### Section Hero
+- Animation parallax en arrière-plan
+- Avatar avec liens sociaux (GitHub, LinkedIn, Email)
+- Boutons d'appel à l'action
+
+### Section À propos
+- Présentation professionnelle et narratif de carrière
+- Transition de l'audiovisuel au développement web
+
+### Projets en vedette
+- Vitrine de 4 meilleurs projets
+- Aperçu rapide avec liens
+
+### Section Compétences
+- Compétences techniques organisées par catégorie
+- Logos et badges technologiques
+
+### Galerie de projets
+- Fiches projet détaillées avec modales
+- Carrousel d'images avec navigation circulaire
+- Fonctionnalités, réalisations, stack technique
+- Liens vers démo et GitHub
+
+### Section Timeline
+- Poste actuel (PlayPlay - Creative Developer)
+- 3 diplômes/formations
+- Expériences professionnelles précédentes
+
+### Section Contact
+- Formulaire de contact professionnel
+- Validation des formulaires avec react-hook-form
+- Protection par Google reCAPTCHA
+- Intégration clients email
+
+### Mode sombre
+- Support complet thème clair/sombre
+- Préférence utilisateur sauvegardée dans localStorage
+- Transitions de thème fluides
+
+### Navigation
+- Navbar collante avec smooth scroll
+- Bouton toggle mode sombre
+- Menu mobile réactif
+
+## 🎨 Styles
+
+- **SCSS Modules** pour styles scopés par composant
+- **Variables CSS** pour système de design (couleurs, typographie, espacement, ombres)
+- **Design Responsive** (approche mobile-first)
+- **Palette de couleurs accessible** avec contraste approprié
+
+## 📦 Dépendances principales
+
+- `react` (19.x) - Bibliothèque UI
+- `react-hook-form` - Gestion des formulaires
+- `react-google-recaptcha` - Intégration reCAPTCHA
+- Outils de développement: ESLint, Prettier, TypeScript
+
+## 🌐 Déploiement
+
+Prêt à être déployé sur GitHub Pages ou tout hébergement statique :
+
+```bash
+npm run build
+# Déployer le dossier dist/ sur votre plateforme d'hébergement
+```
+
+## 📝 Variables d'environnement
+
+Créer `.env.local` pour reCAPTCHA :
+
+```env
+VITE_RECAPTCHA_SITE_KEY=your_recaptcha_site_key
+```
+
+## 🎯 Objectif du projet
+
+Site de portfolio professionnel démontrant les bonnes pratiques de développement web moderne et mettant en avant les projets réalisés lors du programme d'alternance OpenClassrooms. Sert à la fois de vitrine de portfolio et de porte d'entrée pour les contacts de potentiels clients et employeurs.
+
+## 📄 Licence
+
+© 2025 Jean-Noël Drugmand. Tous droits réservés.
