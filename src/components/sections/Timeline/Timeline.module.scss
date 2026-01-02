@@ -219,6 +219,10 @@
     text-align: left !important;
   }
 
+  .companyWrapper {
+    justify-content: flex-start !important;
+  }
+
   .dot {
     left: calc(var(--spacing-md) - 6px);
   }
