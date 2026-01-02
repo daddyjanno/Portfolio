@@ -43,6 +43,7 @@ export const Contact = () => {
                 id="name"
                 type="text"
                 placeholder="Jean Dupont"
+                autoComplete="name"
                 className={`${styles.input} ${errors.name ? styles.inputError : ''}`}
                 {...register('name', {
                   required: 'Le nom est requis',
@@ -62,6 +63,7 @@ export const Contact = () => {
                 id="email"
                 type="email"
                 placeholder="vous@example.com"
+                autoComplete="email"
                 className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
                 {...register('email', {
                   required: 'L\'email est requis',
