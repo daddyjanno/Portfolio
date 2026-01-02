@@ -5,10 +5,10 @@ export const About = () => {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.3 });
 
   return (
-    <section id="about" className={styles.about} ref={ref}>
+    <section id="about" className={styles.about} ref={ref} role="region" aria-labelledby="about-heading">
       <div className={styles.container}>
         <div className={`${styles.content} ${isVisible ? styles.visible : ''}`}>
-          <h2 className={styles.title}>À propos</h2>
+          <h2 id="about-heading" className={styles.title}>À propos</h2>
 
           <div className={styles.text}>
             <p>

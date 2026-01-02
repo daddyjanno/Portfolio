@@ -11,10 +11,10 @@ export const Featured = () => {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.3 });
 
   return (
-    <section id="featured" className={styles.featured} ref={ref}>
+    <section id="featured" className={styles.featured} ref={ref} role="region" aria-labelledby="featured-heading">
       <div className={styles.container}>
         <div className={`${styles.content} ${isVisible ? styles.visible : ''}`}>
-          <h2 className={styles.title}>Actualités</h2>
+          <h2 id="featured-heading" className={styles.title}>Actualités</h2>
 
           {/* Short Description */}
           {PLAYPLAY_EXPERIENCE.shortDescription && (

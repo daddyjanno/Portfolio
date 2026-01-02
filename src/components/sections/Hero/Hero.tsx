@@ -10,7 +10,7 @@ export const Hero = () => {
   const { scrollToSection } = useScrollToElement();
 
   return (
-    <section id="hero" className={styles.hero}>
+    <section id="hero" className={styles.hero} role="region" aria-labelledby="hero-heading">
       {/* Background Image Layer with Parallax */}
       <div className={styles.heroBackground} ref={parallaxRef}>
         <img src={getAssetPath('/Hero.webp')} alt="Hero background" loading="lazy" />
@@ -25,7 +25,7 @@ export const Hero = () => {
               <img src={getAssetPath('/jnd-avatar.webp')} alt="Jean-Noël Drugmand" className={styles.avatarImage} />
             </picture>
           </div>
-          <h1 className={styles.title}>Jean-Noël Drugmand</h1>
+          <h1 id="hero-heading" className={styles.title}>Jean-Noël Drugmand</h1>
           <p className={styles.subtitle}>Creative Developer | Fullstack JavaScript</p>
           <p className={styles.description}>
             Développeur fullstack passionné par la création d'expériences web performantes et

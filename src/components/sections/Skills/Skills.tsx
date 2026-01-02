@@ -7,9 +7,9 @@ export const Skills = () => {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.2 });
 
   return (
-    <section id="skills" className={styles.skills} ref={ref}>
+    <section id="skills" className={styles.skills} ref={ref} role="region" aria-labelledby="skills-heading">
       <div className={styles.container}>
-        <h2 className={styles.title}>Compétences</h2>
+        <h2 id="skills-heading" className={styles.title}>Compétences</h2>
 
         {/* Hard Skills */}
         <div className={styles.skillsGrid}>

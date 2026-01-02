@@ -32,9 +32,9 @@ export const Projects = () => {
   const currentProject = PROJECTS.find((p) => p.id === selectedProject);
 
   return (
-    <section id="projects" className={styles.projects} ref={ref}>
+    <section id="projects" className={styles.projects} ref={ref} role="region" aria-labelledby="projects-heading">
       <div className={styles.container}>
-        <h2 className={styles.title}>Projets</h2>
+        <h2 id="projects-heading" className={styles.title}>Projets</h2>
 
         {/* Filter */}
         <div className={styles.filterContainer}>

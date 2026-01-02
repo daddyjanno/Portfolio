@@ -17,9 +17,9 @@ export const Contact = () => {
   } = formMethods;
 
   return (
-    <section id="contact" className={styles.contact} ref={ref}>
+    <section id="contact" className={styles.contact} ref={ref} role="region" aria-labelledby="contact-heading">
       <div className={styles.container}>
-        <h2 className={styles.title}>Contact</h2>
+        <h2 id="contact-heading" className={styles.title}>Contact</h2>
 
         {/* Contact Info */}
         <div className={styles.info}>

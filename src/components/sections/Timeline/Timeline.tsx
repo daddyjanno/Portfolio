@@ -7,9 +7,9 @@ export const Timeline = () => {
   const { ref, isVisible } = useIntersectionObserver({ threshold: 0.2 });
 
   return (
-    <section id="timeline" className={styles.timeline} ref={ref}>
+    <section id="timeline" className={styles.timeline} ref={ref} role="region" aria-labelledby="timeline-heading">
       <div className={styles.container}>
-        <h2 className={styles.title}>Parcours</h2>
+        <h2 id="timeline-heading" className={styles.title}>Parcours</h2>
 
         <div className={styles.timelineWrapper}>
           <div className={styles.line} />
