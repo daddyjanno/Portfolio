@@ -115,7 +115,7 @@ export const Contact = () => {
             </div>
 
             {/* reCAPTCHA v2 - Checkbox */}
-            <div className={styles.recaptchaContainer}>
+            <div className={styles.recaptchaContainer} role="group" aria-label="Vérification reCAPTCHA">
               <ReCAPTCHA
                 ref={recaptchaRef}
                 sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
