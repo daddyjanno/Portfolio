@@ -41,7 +41,7 @@
 
     &:hover:not(:disabled) {
       box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
-      background-color: var(--color-primary-light);
+      background-color: var(--color-primary);
     }
 
     &:active:not(:disabled) {
