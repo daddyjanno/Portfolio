@@ -121,6 +121,10 @@ export const Contact = () => {
               <div id="recaptcha-label" className={styles.label}>
                 Vérification reCAPTCHA <span className={styles.required}>*</span>
               </div>
+              {/* Hidden label for Google reCAPTCHA generated textarea */}
+              <label htmlFor="g-recaptcha-response" style={{ display: 'none' }}>
+                reCAPTCHA verification
+              </label>
               <div role="group" aria-labelledby="recaptcha-label">
                 <ReCAPTCHA
                   ref={recaptchaRef}
