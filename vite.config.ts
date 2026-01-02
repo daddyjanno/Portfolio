@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import type { Options as TerserOptions } from 'terser'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Portfolio/',
   plugins: [react()],
   server: {
     port: 5173,
@@ -21,7 +21,7 @@ export default defineConfig({
       format: {
         comments: false,
       },
-    } as TerserOptions,
+    },
     // Chunk splitting strategy for better caching
     rollupOptions: {
       output: {
@@ -33,7 +33,6 @@ export default defineConfig({
           ],
           // Split external dependencies
           'external': [
-            'emailjs-com',
             'react-google-recaptcha',
           ],
         },
