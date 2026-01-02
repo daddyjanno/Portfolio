@@ -118,10 +118,10 @@ export const Contact = () => {
 
             {/* reCAPTCHA v2 - Checkbox */}
             <div className={styles.recaptchaContainer}>
-              <label htmlFor="recaptcha" className={styles.label}>
+              <div id="recaptcha-label" className={styles.label}>
                 Vérification reCAPTCHA <span className={styles.required}>*</span>
-              </label>
-              <div id="recaptcha" role="group">
+              </div>
+              <div role="group" aria-labelledby="recaptcha-label">
                 <ReCAPTCHA
                   ref={recaptchaRef}
                   sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
