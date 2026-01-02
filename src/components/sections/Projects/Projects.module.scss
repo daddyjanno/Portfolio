@@ -35,14 +35,14 @@
   transition: all var(--transition-normal);
 
   &:hover {
-    border-color: var(--color-primary);
+    border-color: var(--color-btn);
     color: var(--color-primary);
   }
 
   &.active {
-    background-color: var(--color-primary);
+    background-color: var(--color-btn);
     color: white;
-    border-color: var(--color-primary);
+    border-color: var(--color-btn);
   }
 
   &:focus-visible {
@@ -61,7 +61,9 @@
 .gridItem {
   opacity: 0;
   transform: translateY(1rem);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
 
   &.visible {
     opacity: 1;
