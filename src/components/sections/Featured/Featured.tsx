@@ -3,6 +3,7 @@ import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver'
 import { Button } from '../../common/Button/Button';
 import { Slideshow } from '../Projects/Slideshow';
 import { PLAYPLAY_EXPERIENCE } from '../../../data/playplay';
+import { getAssetPath } from '../../../utils/constants';
 import styles from './Featured.module.scss';
 
 export const Featured = () => {
@@ -18,7 +19,7 @@ export const Featured = () => {
           {/* Short Description */}
           {PLAYPLAY_EXPERIENCE.shortDescription && (
             <div className={styles.shortDescriptionWrapper}>
-              <img src="/PlayPlay.svg" alt="PlayPlay" className={styles.playplayIcon} />
+              <img src={getAssetPath('/PlayPlay.svg')} alt="PlayPlay" className={styles.playplayIcon} />
               <h3 className={styles.shortDescription}>{PLAYPLAY_EXPERIENCE.shortDescription}</h3>
             </div>
           )}

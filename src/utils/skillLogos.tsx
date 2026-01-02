@@ -1,4 +1,5 @@
 /* Skill logos with links to documentation */
+import { getAssetPath } from './constants';
 
 export const SkillLogos = {
   // Frontend
@@ -169,7 +170,7 @@ export const SkillLogos = {
   express: (
     <a href="https://expressjs.com/" target="_blank" rel="noreferrer">
       <img
-        src="/expressjs-icon.svg"
+        src={getAssetPath('/expressjs-icon.svg')}
         width="36"
         height="36"
         alt="Express"
@@ -248,7 +249,7 @@ export const SkillLogos = {
   ),
   figma: (
     <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
-      <img src="/figma-icon.svg" width="36" height="36" alt="Figma" loading="lazy" />
+      <img src={getAssetPath('/figma-icon.svg')} width="36" height="36" alt="Figma" loading="lazy" />
     </a>
   ),
   macos: (
@@ -266,13 +267,13 @@ export const SkillLogos = {
   // Creative
   photoshop: (
     <a href="https://www.adobe.com/uk/products/photoshop.html" target="_blank" rel="noreferrer">
-      <img src="/adobe-photoshop-icon.svg" width="36" height="36" alt="Photoshop" loading="lazy" />
+      <img src={getAssetPath('/adobe-photoshop-icon.svg')} width="36" height="36" alt="Photoshop" loading="lazy" />
     </a>
   ),
   aftereffects: (
     <a href="https://www.adobe.com/uk/products/aftereffects.html" target="_blank" rel="noreferrer">
       <img
-        src="/adobe-after-effects-icon.svg"
+        src={getAssetPath('/adobe-after-effects-icon.svg')}
         width="36"
         height="36"
         alt="After Effects"
@@ -283,7 +284,7 @@ export const SkillLogos = {
   premierepro: (
     <a href="https://www.adobe.com/uk/products/premiere.html" target="_blank" rel="noreferrer">
       <img
-        src="/adobe-premiere-pro-icon.svg"
+        src={getAssetPath('/adobe-premiere-pro-icon.svg')}
         width="36"
         height="36"
         alt="Premiere Pro"
@@ -294,8 +295,8 @@ export const SkillLogos = {
   finalcut: (
     <a href="https://www.apple.com/final-cut-pro/" target="_blank" rel="noreferrer">
       <picture>
-        <source srcSet="/finalcut.webp" type="image/webp" />
-        <img src="/finalcut.webp" width="36" height="36" alt="Final Cut Pro" loading="lazy" />
+        <source srcSet={getAssetPath('/finalcut.webp')} type="image/webp" />
+        <img src={getAssetPath('/finalcut.webp')} width="36" height="36" alt="Final Cut Pro" loading="lazy" />
       </picture>
     </a>
   ),

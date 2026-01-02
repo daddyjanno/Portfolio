@@ -1,7 +1,7 @@
 import { useParallax } from '../../../hooks/useParallax';
 import { useScrollToElement } from '../../../hooks/useScrollToElement';
 import { Button } from '../../common/Button/Button';
-import { SOCIAL_LINKS, PARALLAX_SPEEDS } from '../../../utils/constants';
+import { SOCIAL_LINKS, PARALLAX_SPEEDS, getAssetPath } from '../../../utils/constants';
 import { GithubIcon, LinkedinIcon, EmailIcon } from '../../../utils/icons';
 import styles from './Hero.module.scss';
 
@@ -13,7 +13,7 @@ export const Hero = () => {
     <section id="hero" className={styles.hero}>
       {/* Background Image Layer with Parallax */}
       <div className={styles.heroBackground} ref={parallaxRef}>
-        <img src="/Hero.webp" alt="Hero background" loading="lazy" />
+        <img src={getAssetPath('/Hero.webp')} alt="Hero background" loading="lazy" />
       </div>
 
       {/* Content Layer */}
@@ -21,8 +21,8 @@ export const Hero = () => {
         <div className={styles.content}>
           <div className={styles.avatar}>
             <picture>
-              <source srcSet="/jnd-avatar.webp" type="image/webp" />
-              <img src="/jnd-avatar.webp" alt="Jean-Noël Drugmand" className={styles.avatarImage} />
+              <source srcSet={getAssetPath('/jnd-avatar.webp')} type="image/webp" />
+              <img src={getAssetPath('/jnd-avatar.webp')} alt="Jean-Noël Drugmand" className={styles.avatarImage} />
             </picture>
           </div>
           <h1 className={styles.title}>Jean-Noël Drugmand</h1>
@@ -61,7 +61,7 @@ export const Hero = () => {
         </div>
       </div>
       <div className={styles.scrollIndicator}>
-        <img src="/scroll-down.svg" alt="Scroll down" className={styles.scrollIcon} />
+        <img src={getAssetPath('/scroll-down.svg')} alt="Scroll down" className={styles.scrollIcon} />
       </div>
     </section>
   );

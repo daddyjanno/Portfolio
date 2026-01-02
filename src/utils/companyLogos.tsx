@@ -1,10 +1,11 @@
 /* Company logos with links */
+import { getAssetPath } from './constants';
 
 export const CompanyLogos = {
   openclassrooms: (
     <a href="https://openclassrooms.com/" target="_blank" rel="noreferrer">
       <img
-        src="/openclassrooms-icon.svg"
+        src={getAssetPath('/openclassrooms-icon.svg')}
         width="24"
         height="24"
         alt="OpenClassrooms"
@@ -14,7 +15,7 @@ export const CompanyLogos = {
   ),
   playplay: (
     <a href="https://playplay.com/" target="_blank" rel="noreferrer">
-      <img src="/PlayPlay.svg" width="24" height="24" alt="PlayPlay" loading="lazy" />
+      <img src={getAssetPath('/PlayPlay.svg')} width="24" height="24" alt="PlayPlay" loading="lazy" />
     </a>
   ),
   lewagon: (
@@ -31,16 +32,16 @@ export const CompanyLogos = {
   gretadeshautsdeseine: (
     <a href="https://www.greta-cfa92.ac-versailles.fr/" target="_blank" rel="noreferrer">
       <picture>
-        <source srcSet="/greta.webp" type="image/webp" />
-        <img src="/greta.png" width="24" height="24" alt="GRETA" loading="lazy" />
+        <source srcSet={getAssetPath('/greta.webp')} type="image/webp" />
+        <img src={getAssetPath('/greta.png')} width="24" height="24" alt="GRETA" loading="lazy" />
       </picture>
     </a>
   ),
   eurosport: (
     <a href="https://www.eurosport.com/" target="_blank" rel="noreferrer">
       <picture>
-        <source srcSet="/eurosport.webp" type="image/webp" />
-        <img src="/eurosport.png" width="24" height="24" alt="Eurosport" loading="lazy" />
+        <source srcSet={getAssetPath('/eurosport.webp')} type="image/webp" />
+        <img src={getAssetPath('/eurosport.png')} width="24" height="24" alt="Eurosport" loading="lazy" />
       </picture>
     </a>
   ),

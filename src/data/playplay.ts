@@ -1,4 +1,5 @@
 import type { Project } from '../types';
+import { getAssetPath } from '../utils/constants';
 
 // PlayPlay Experience - Creative Developer
 export const PLAYPLAY_EXPERIENCE: Project = {
@@ -9,7 +10,7 @@ export const PLAYPLAY_EXPERIENCE: Project = {
     "En tant que Creative Developer chez PlayPlay, je travaille sur le développement de composants et d'assets réutilisables et interactifs et d'expériences visuelles immersives.\n La mission principale est de créer des éléments d'interface innovants et engageants, en combinant des animations fluides avec des performances optimales. \nExpertise en motion design, rendu 2D haute performance et intégration créative de maquettes complexes.",
   technologies: ['TypeScript', 'JavaScript', 'Vue.js', 'Pixi.js', 'Anime.js'],
   category: 'Fullstack',
-  images: ['/actual/PP1.webp', '/actual/PP2.webp', '/actual/PP3.webp'],
+  images: [getAssetPath('/actual/PP1.webp'), getAssetPath('/actual/PP2.webp'), getAssetPath('/actual/PP3.webp')],
   details: [
     'Conception et implémentation de composants interactifs avec animations avancées',
     "Création d'expériences visuelles dynamiques et engageantes avec motion design",

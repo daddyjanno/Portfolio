@@ -1,4 +1,5 @@
 import type { Project } from '../types';
+import { getAssetPath } from '../utils/constants';
 
 export const PROJECTS: Project[] = [
   {
@@ -11,9 +12,9 @@ export const PROJECTS: Project[] = [
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Node.js', 'Express', 'SQLite', 'JWT'],
     category: 'Fullstack',
     images: [
-      '/projects/SophieBluel1.webp',
-      '/projects/SophieBluel2.webp',
-      '/projects/SophieBluel3.webp',
+      getAssetPath('/projects/SophieBluel1.webp'),
+      getAssetPath('/projects/SophieBluel2.webp'),
+      getAssetPath('/projects/SophieBluel3.webp'),
     ],
     details: [
       'Galerie dynamique avec filtres par catégories',
@@ -46,7 +47,7 @@ export const PROJECTS: Project[] = [
       'GitHub Pages',
     ],
     category: 'Frontend',
-    images: ['/projects/Kasa1.webp', '/projects/Kasa2.webp', '/projects/Kasa3.webp'],
+    images: [getAssetPath('/projects/Kasa1.webp'), getAssetPath('/projects/Kasa2.webp'), getAssetPath('/projects/Kasa3.webp')],
     details: [
       'Single Page Application (SPA) avec React 19 et TypeScript 100% type-safe',
       'Galerie interactive avec navigation circulaire',
@@ -85,9 +86,9 @@ export const PROJECTS: Project[] = [
     ],
     category: 'Backend',
     images: [
-      '/projects/Grimoire-Home.webp',
-      '/projects/Grimoire-Add.webp',
-      '/projects/Grimoire-View.webp',
+      getAssetPath('/projects/Grimoire-Home.webp'),
+      getAssetPath('/projects/Grimoire-Add.webp'),
+      getAssetPath('/projects/Grimoire-View.webp'),
     ],
     details: [
       'API REST 100% TypeScript avec Express 5 - 15+ endpoints CRUD',
@@ -118,10 +119,10 @@ export const PROJECTS: Project[] = [
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'Lighthouse', 'Sharp', 'Wave'],
     category: 'Fullstack',
     images: [
-      '/projects/NinaCarducci-Home.webp',
-      '/projects/NinaCarducci-Gallery.webp',
-      '/projects/NinaCarducci-Lighthouse.webp',
-      '/projects/NinaCarducciWave.webp',
+      getAssetPath('/projects/NinaCarducci-Home.webp'),
+      getAssetPath('/projects/NinaCarducci-Gallery.webp'),
+      getAssetPath('/projects/NinaCarducci-Lighthouse.webp'),
+      getAssetPath('/projects/NinaCarducciWave.webp'),
     ],
     details: [
       'Audit et Optimisation Lighthouse : scores 95+ (Performance, Accessibility, Best Practices, SEO)',
