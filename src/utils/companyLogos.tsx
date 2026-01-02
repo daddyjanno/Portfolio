@@ -46,7 +46,7 @@ export const CompanyLogos = {
     </a>
   ),
   freelance: (
-    <a href="#" target="_blank" rel="noreferrer">
+    <a href="#" target="_blank" rel="noreferrer" aria-label="Freelance work available">
       <svg
         viewBox="0 0 24 24"
         width="24"
