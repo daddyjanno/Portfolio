@@ -21,7 +21,9 @@
   gap: var(--spacing-3xl);
   opacity: 0;
   transform: translateY(2rem);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
 
   &.visible {
     opacity: 1;
@@ -42,7 +44,7 @@
   }
 
   /* reCAPTCHA container should not take space */
-  > :global(div[data-testid="grecaptcha-container"]),
+  > :global(div[data-testid='grecaptcha-container']),
   > :global(.grecaptcha-badge) {
     display: none !important;
     margin: 0 !important;
@@ -231,7 +233,7 @@
     transition: color var(--transition-normal);
 
     &:hover {
-      color: var(--color-primary-light);
+      color: var(--color-primary);
       text-decoration: underline;
     }
   }

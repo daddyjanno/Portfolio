@@ -1,7 +1,6 @@
 // Color Palette - Light Mode
 :root {
-  --color-primary: #3b82f6;
-  --color-primary-light: #60a5fa;
+  --color-primary: #0653b1;
   --color-secondary: #8b5cf6;
   --color-secondary-light: #a78bfa;
   --color-bg: #ffffff;
@@ -72,7 +71,7 @@
 
 // Dark Mode
 [data-theme='dark'] {
-  --color-primary: #60a5fa;
+  --color-primary: #0653b1;
   --color-secondary: #a78bfa;
   --color-bg: #0f172a;
   --color-bg-secondary: #1e293b;
