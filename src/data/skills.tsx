@@ -1,6 +1,7 @@
 import type { Skill, SoftSkill } from '../types';
 import { SkillLogos } from '../utils/skillLogos';
 import { GitIcon, GithubIcon } from '../utils/icons';
+import { getAssetPath } from '../utils/constants';
 import styles from './skills.module.scss';
 
 export const SKILLS: Skill[] = [
@@ -58,7 +59,7 @@ export const SKILLS: Skill[] = [
         name: 'Jest / TDD',
         icon: (
           <a href="https://jestjs.io/" target="_blank" rel="noreferrer" className={styles.iconLink}>
-            <img src="/jest-svgrepo-com.svg" alt="Jest" />
+            <img src={getAssetPath('/jest-svgrepo-com.svg')} alt="Jest" />
           </a>
         ),
       },
@@ -68,11 +69,11 @@ export const SKILLS: Skill[] = [
           <div className={styles.iconGroup}>
             {/* ESLint icon */}
             <a href="https://eslint.org/" target="_blank" rel="noreferrer" className={styles.iconLink}>
-              <img src="/eslint-svgrepo-com.svg" alt="ESLint" />
+              <img src={getAssetPath('/eslint-svgrepo-com.svg')} alt="ESLint" />
             </a>
             {/* Prettier icon */}
             <a href="https://prettier.io/" target="_blank" rel="noreferrer" className={styles.iconLink}>
-              <img src="/prettier-svgrepo-com.svg" alt="Prettier" />
+              <img src={getAssetPath('/prettier-svgrepo-com.svg')} alt="Prettier" />
             </a>
           </div>
         ),
@@ -83,7 +84,7 @@ export const SKILLS: Skill[] = [
           <div className={styles.iconGroup}>
             {/* Vite icon */}
             <a href="https://vitejs.dev/" target="_blank" rel="noreferrer" className={styles.iconLink}>
-              <img src="/vite.svg" alt="Vite" />
+              <img src={getAssetPath('/vite.svg')} alt="Vite" />
             </a>
             {/* Webpack icon */}
             <a href="https://webpack.js.org/" target="_blank" rel="noreferrer" className={styles.iconLink}>
@@ -100,11 +101,11 @@ export const SKILLS: Skill[] = [
           <div className={styles.iconGroup}>
             {/* Claude Code icon */}
             <a href="https://claude.ai/code" target="_blank" rel="noreferrer" className={styles.iconLink}>
-              <img src="/claude-ai-icon.svg" alt="Claude Code" />
+              <img src={getAssetPath('/claude-ai-icon.svg')} alt="Claude Code" />
             </a>
             {/* Windsurf icon */}
             <a href="https://codeium.com/windsurf" target="_blank" rel="noreferrer" className={`${styles.iconLink} ${styles.windSurfIcon}`}>
-              <img src="/windsurf-icon.svg" alt="Windsurf" />
+              <img src={getAssetPath('/windsurf-icon.svg')} alt="Windsurf" />
             </a>
           </div>
         ),
