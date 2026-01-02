@@ -46,10 +46,10 @@ export const SKILLS: Skill[] = [
         icon: (
           <div className={styles.iconGroup}>
             {/* Icon components - centralized from utils/icons.tsx */}
-            <a href="https://git-scm.com/" target="_blank" rel="noreferrer" className={styles.iconLink}>
+            <a href="https://git-scm.com/" target="_blank" rel="noreferrer" aria-label="Git - Version control system" className={styles.iconLink}>
               <GitIcon width={24} height={24} />
             </a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer" className={styles.iconLink}>
+            <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub - Code repository platform" className={styles.iconLink}>
               <GithubIcon width={24} height={24} />
             </a>
           </div>
