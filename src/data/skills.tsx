@@ -58,7 +58,7 @@ export const SKILLS: Skill[] = [
       {
         name: 'Jest / TDD',
         icon: (
-          <a href="https://jestjs.io/" target="_blank" rel="noreferrer" className={styles.iconLink}>
+          <a href="https://jestjs.io/" target="_blank" rel="noreferrer" aria-label="Jest - Testing framework" className={styles.iconLink}>
             <img src={getAssetPath('/jest-svgrepo-com.svg')} alt="Jest" />
           </a>
         ),
@@ -68,11 +68,11 @@ export const SKILLS: Skill[] = [
         icon: (
           <div className={styles.iconGroup}>
             {/* ESLint icon */}
-            <a href="https://eslint.org/" target="_blank" rel="noreferrer" className={styles.iconLink}>
+            <a href="https://eslint.org/" target="_blank" rel="noreferrer" aria-label="ESLint - Code linter" className={styles.iconLink}>
               <img src={getAssetPath('/eslint-svgrepo-com.svg')} alt="ESLint" />
             </a>
             {/* Prettier icon */}
-            <a href="https://prettier.io/" target="_blank" rel="noreferrer" className={styles.iconLink}>
+            <a href="https://prettier.io/" target="_blank" rel="noreferrer" aria-label="Prettier - Code formatter" className={styles.iconLink}>
               <img src={getAssetPath('/prettier-svgrepo-com.svg')} alt="Prettier" />
             </a>
           </div>
@@ -87,7 +87,7 @@ export const SKILLS: Skill[] = [
               <img src={getAssetPath('/vite.svg')} alt="Vite" />
             </a>
             {/* Webpack icon */}
-            <a href="https://webpack.js.org/" target="_blank" rel="noreferrer" className={styles.iconLink}>
+            <a href="https://webpack.js.org/" target="_blank" rel="noreferrer" aria-label="Webpack - Module bundler" className={styles.iconLink}>
               <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                 <path d="M22.67 11.5l-10-6v4.43l5.57 3.22-5.57 3.22v4.43l10-6zM1.33 11.5l10-6v4.43L5.76 13.15l5.57 3.22v4.43l-10-6zm9.34-9L2 6.5v11l8.67 5.5V2.5z" />
               </svg>
