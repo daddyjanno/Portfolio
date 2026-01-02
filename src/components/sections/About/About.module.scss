@@ -11,7 +11,9 @@
 .content {
   opacity: 0;
   transform: translateY(2rem);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
 
   &.visible {
     opacity: 1;
@@ -68,7 +70,7 @@
 
   p {
     font-size: var(--font-size-small);
-    color: var(--color-text-light);
+    color: var(--color-text);
     margin: 0;
   }
 }

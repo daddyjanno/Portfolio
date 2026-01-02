@@ -26,7 +26,9 @@
 .skillCard {
   opacity: 0;
   transform: translateY(1rem);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
 
   &.visible {
     opacity: 1;
@@ -131,7 +133,9 @@
 .softSkillCard {
   opacity: 0;
   transform: translateY(1rem);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
   width: 100%;
   max-width: 250px;
   text-align: center;
@@ -150,7 +154,7 @@
   p {
     margin: 0;
     font-size: var(--font-size-small);
-    color: var(--color-text-light);
+    color: var(--color-text);
     line-height: var(--line-height-normal);
   }
 }

@@ -23,7 +23,7 @@
 .copyright {
   margin: 0;
   font-size: var(--font-size-small);
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
 .socials {
@@ -37,7 +37,9 @@
     align-items: center;
     justify-content: center;
     color: #000000; /* Black in light mode */
-    transition: transform 200ms ease-out, color 200ms ease-out;
+    transition:
+      transform 200ms ease-out,
+      color 200ms ease-out;
 
     &:hover {
       transform: translateY(-2px);
@@ -58,7 +60,7 @@
 /* Dark mode - icons are #F1F5F9 */
 [data-theme='dark'] {
   .socials a {
-    color: #F1F5F9;
+    color: #f1f5f9;
   }
 }
 
